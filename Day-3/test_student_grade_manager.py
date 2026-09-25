@@ -1,5 +1,5 @@
 import pytest
-from student_grade_manager import students, add_stud, search_stud, sort_stud, avg_marks, avg_report, show, get_int, get_unique_value, get_non_empty
+from student_grade_manager import students, add_stud, search_stud, sort_stud, avg_marks, avg_report, get_unique_value
 
 @pytest.fixture(autouse = True)
 def clear_stud():
@@ -28,3 +28,18 @@ def test_duplicate_subject(monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
     result = get_unique_value("Enter subject name: ", subjects, "Subject already exist...")
     assert result == "Physics"
+    
+def test_stud_id():
+    add_stud("be101", "Ananya", {"Math": 80})
+    result = search_stud("s101")
+    assert "Student Name: Ananya" in result
+    
+def test_avg_report():
+    add_stud("be101", "Ananya", {"Math": 80, "Python": 90})
+    add_stud("be102", "Mohan", {"Math": 60, "Python": 70})
+    result = avg_report()
+    assert result == {"s101": 85.0, "s102": 65.0}
+    
+def test_search_unknown_student():
+    result = search_stud("unknown")
+    assert result == "Student not found!!!"

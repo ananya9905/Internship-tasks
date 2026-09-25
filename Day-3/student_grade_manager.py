@@ -41,12 +41,13 @@ def get_int(prompt, low, high):
             pass
         print(f"Please enter a number between {low} and {high}")
         
-def get_unique_value(prompt, existing_values, error_msg):
+def get_unique_value(prompt, existing_values, error_msg, transform = str):
     while True:
-        value = input(prompt).strip().title()
+        value = input(prompt).strip()
         if not value:
             print("Value cannot be empty!!!")
             continue
+        value = transform(value)
         if value in existing_values:
             print(error_msg)
         else:
@@ -72,7 +73,7 @@ def main():
             num = get_int("Enter number of subjects: ", 1, 10)
             subjects = {}
             for _ in range(num):
-                subject = get_unique_value("Enter subject name: ", subjects, "Subject already exist...")
+                subject = get_unique_value("Enter subject name: ", subjects, "Subject already exist...", transform = str.title)
                 mark = get_int("Enter marks of the subject: ", 0, 100)
                 subjects[subject] = mark
             print(add_stud(stud_id, name, subjects))
