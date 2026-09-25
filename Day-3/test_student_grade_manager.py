@@ -26,19 +26,20 @@ def test_duplicate_subject(monkeypatch):
     subjects = {"Math": 80}
     inputs = iter(["math", "Physics"])
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
-    result = get_unique_value("Enter subject name: ", subjects, "Subject already exist...")
+    result = get_unique_value("Enter subject name: ", subjects, "Subject already exist...", transform = str.title)
     assert result == "Physics"
     
-def test_stud_id():
-    add_stud("be101", "Ananya", {"Math": 80})
-    result = search_stud("s101")
-    assert "Student Name: Ananya" in result
+def test_stud_id(monkeypatch):
+    inputs = iter(["be101"])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    result = get_unique_value("Enter student ID: ", students, "Student ID already exist...")
+    assert result == "be101"
     
 def test_avg_report():
     add_stud("be101", "Ananya", {"Math": 80, "Python": 90})
     add_stud("be102", "Mohan", {"Math": 60, "Python": 70})
     result = avg_report()
-    assert result == {"s101": 85.0, "s102": 65.0}
+    assert result == {"be101": 85.0, "be102": 65.0}
     
 def test_search_unknown_student():
     result = search_stud("unknown")

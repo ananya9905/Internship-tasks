@@ -26,7 +26,7 @@ python Text-analysis-tool.py
 ```text
 Enter the text: Python is easy to learn
 1. Word Count: 5
-2. Character Frequency: {'P': 1, 'y': 1, 't': 2, 'h': 1, 'o': 2, 'n': 2, 'i': 1, 's': 1, 'e': 2, 'a': 1, 'l': 1, 'r': 1}
+2. Character Frequency: {'P': 1, 'y': 2, 't': 2, 'h': 1, 'o': 2, 'n': 2, 'i': 1, 's': 2, 'e': 2, 'a': 2, 'l': 1, 'r': 1}
 3. Longest Word: Python
 4. Average Word Length: 3.8
 ```
