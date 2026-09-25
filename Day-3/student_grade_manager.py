@@ -21,8 +21,12 @@ def avg_marks(stud_id):
     subjects = students[stud_id]["Subjects"]
     if not subjects:
         return None
-    avg_marks = sum(subjects.value()) / len(subjects)
-    return round(avg_marks, 2)   
+    average = sum(subjects.values()) / len(subjects)
+    return round(average, 2)
+
+def avg_report():
+    report = {stud_id: avg_marks(stud_id) for stud_id in students}
+    return report
         
 def show():
     return students
@@ -39,7 +43,7 @@ def get_int(prompt, low, high):
         
 def get_unique_value(prompt, existing_values, error_msg):
     while True:
-        value = input(prompt).strip()
+        value = input(prompt).strip().title()
         if not value:
             print("Value cannot be empty!!!")
             continue
@@ -59,8 +63,8 @@ def get_non_empty(prompt):
         
 def main():
     while True:
-        print("1. Add student\n2. Search student\n3. Sort students\n4. Average Marks\n5. Display\n6. Exit")
-        user = get_int("Enter your choice: ", 1, 6)
+        print("1. Add student\n2. Search student\n3. Sort students\n4. Average Marks\n5. Display\n6. Report\n7. Exit")
+        user = get_int("Enter your choice: ", 1, 7)
         
         if user == 1:
             stud_id = get_unique_value("Enter student ID: ", students, "Student ID already exist...")
@@ -68,7 +72,7 @@ def main():
             num = get_int("Enter number of subjects: ", 1, 10)
             subjects = {}
             for _ in range(num):
-                subject = get_unique_value("Enter subject name: ", subjects, "Subject already exist...").title()
+                subject = get_unique_value("Enter subject name: ", subjects, "Subject already exist...")
                 mark = get_int("Enter marks of the subject: ", 0, 100)
                 subjects[subject] = mark
             print(add_stud(stud_id, name, subjects))
@@ -95,8 +99,13 @@ def main():
         
         elif user == 5:
             print(show())
-        
+            
         elif user == 6:
+            report = avg_report()
+            for stud_id, average in report.items():
+                print(f"Student ID: {stud_id}\tAverage Marks: {average}")
+        
+        elif user == 7:
             break
             
 if __name__ == "__main__":
