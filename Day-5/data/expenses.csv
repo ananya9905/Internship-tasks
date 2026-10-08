@@ -1,0 +1,9 @@
+expense_id,amount,category,description,date
+1,750,food,dinner,2026-10-07
+2,500,food,lunch,2026-10-07
+3,250,travel,Bus,2026-10-07
+4,250,travel,Bus,2026-10-07
+5,250,travel,Bus,2026-10-07
+6,250,travel,Bus,2026-10-07
+7,500,Food,Dinner,2026-10-08
+8,1200,shopping,clothes,2026-10-08

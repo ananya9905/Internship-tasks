@@ -1,0 +1,11 @@
+2026-10-07 13:17:37,363 - INFO - Logger test successful
+2026-10-07 16:58:16,099 - INFO - Expense added successfully: ID 3
+2026-10-07 17:44:34,692 - INFO - Expense added successfully: ID 4
+2026-10-07 17:44:34,694 - WARNING - Invalid amount: -100
+2026-10-07 17:44:41,849 - INFO - Expense added successfully: ID 5
+2026-10-07 17:44:41,851 - WARNING - Invalid amount: -100
+2026-10-07 17:44:53,269 - INFO - Expense added successfully: ID 6
+2026-10-07 17:44:53,272 - WARNING - Expense not found: ID 99
+2026-10-08 12:33:52,458 - INFO - Expense added successfully: ID 7
+2026-10-08 12:34:39,006 - INFO - Expense added successfully: ID 8
+2026-10-08 12:44:09,179 - WARNING - Invalid amount: -70
