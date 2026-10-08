@@ -1,0 +1,58 @@
+[
+    {
+        "expense_id": 1,
+        "amount": 750,
+        "category": "food",
+        "description": "dinner",
+        "date": "2026-10-07"
+    },
+    {
+        "expense_id": 2,
+        "amount": 500,
+        "category": "food",
+        "description": "lunch",
+        "date": "2026-10-07"
+    },
+    {
+        "expense_id": 3,
+        "amount": 250,
+        "category": "travel",
+        "description": "Bus",
+        "date": "2026-10-07"
+    },
+    {
+        "expense_id": 4,
+        "amount": 250,
+        "category": "travel",
+        "description": "Bus",
+        "date": "2026-10-07"
+    },
+    {
+        "expense_id": 5,
+        "amount": 250,
+        "category": "travel",
+        "description": "Bus",
+        "date": "2026-10-07"
+    },
+    {
+        "expense_id": 6,
+        "amount": 250,
+        "category": "travel",
+        "description": "Bus",
+        "date": "2026-10-07"
+    },
+    {
+        "expense_id": 7,
+        "amount": 500,
+        "category": "Food",
+        "description": "Dinner",
+        "date": "2026-10-08"
+    },
+    {
+        "expense_id": 8,
+        "amount": 1200,
+        "category": "shopping",
+        "description": "clothes",
+        "date": "2026-10-08"
+    }
+]
