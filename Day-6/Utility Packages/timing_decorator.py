@@ -6,8 +6,9 @@ def timer():
         @wraps(func)
         def wrapper(*args, **kwargs):
             start = time.time()
-            func(*args, **kwargs)
+            result = func(*args, **kwargs)
             end = time.time()
-            return f"Execution Time: {end - start}sec"
+            print(f"Execution Time: {end - start}sec")
+            return result
         return wrapper
     return decorator
